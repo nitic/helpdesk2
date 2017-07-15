@@ -70,7 +70,7 @@ $i=0;
      <script>
      $(document).ready(function() {
         $('#mydata').dataTable( {
-            "aaSorting": [[ 2, "desc" ]]
+            "aaSorting": [[ 1, "desc" ]]
         } );
        } );
 

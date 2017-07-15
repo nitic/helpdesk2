@@ -9,19 +9,33 @@ if(isset($_POST['index'])){
     if($ldap) {
          if($ldap->auth_status === "Authentication OK"){
 
-               $query = $db->prepare("INSERT INTO trouble (postdate, type, detail,priority,phone) VALUES (:postdate, :type, :detail,:priority,:phone );");
-               $result = $query->execute([
-                 "postdate"=>date('Y-m-d H:i:s '),
-                 "type" =>$_POST["type"],
-                 "detail" =>$_POST["detail"],
-                 "priority" =>$_POST["priority"],
-                 "phone" =>$_POST["phone"],
-                ]);
-               if($result){
-                echo "<script>alert('บันทึก สำเร็จ');
-                window.location = 'index.php?file=trouble/index';
-                </script>";
-              }
+               //select Person id
+               $query = $db->prepare("SELECT * FROM person WHERE Dssid = :user");
+               $query->execute([
+                   'user'=>'0016704',  // <--- change
+               ]);
+
+
+               if($query->rowCount()>0){ #กรณีมีค่ามากว่า 0 = ล็อกอินผ่าน
+                      $data = $query->fetch(PDO::FETCH_OBJ);
+                      $person_id = $data->Pid;
+
+                      //insert trouble table
+                      $query = $db->prepare("INSERT INTO trouble (postdate, type, detail,priority,Pid,phone) VALUES (:postdate, :type, :detail,:priority,:Pid ,:phone );");
+                      $result = $query->execute([
+                        "postdate"=>date('Y-m-d H:i:s '),
+                        "type" =>$_POST["type"],
+                        "detail" =>$_POST["detail"],
+                        "priority" =>$_POST["priority"],
+                        "Pid" => $person_id,
+                        "phone" =>$_POST["phone"],
+                       ]);
+                      if($result){
+                       echo "<script>alert('บันทึก สำเร็จ');
+                       window.location = 'index.php?file=trouble/index';
+                       </script>";
+                      }
+                 }
            }
        }
    else{

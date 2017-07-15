@@ -82,7 +82,9 @@ $i=0;
       <script src="assets/bootstrap/js/jquery.dataTables.min.js"></script>
       <script src="assets/bootstrap/js/dataTables.bootstrap.min.js"></script>
       <script >
-      $('#mydata').dataTable();
+      $('#mydata').dataTable({
+        "order": [[ 1, "desc" ]]
+      });
       </script>
   </div>
 </div>

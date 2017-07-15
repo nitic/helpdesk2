@@ -41,7 +41,8 @@ require_once('libs/Db.php');
 
   <body>
 
-    <br><br>
+      <img src="bn.jpg" style="width: 100%; height: 100%;" />
+    <br>
 </ul>
       <!-- Main jumbotron for a primary marketing message or call to action -->
 <br>
