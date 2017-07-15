@@ -42,33 +42,6 @@ require_once('libs/Db.php');
   <body>
 
     <br><br>
-    <!-- <nav class="navbar navbar-default navbar-fixed-top">
-        <div class="container">
-          <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
-            aria-expanded="false" aria-controls="navbar">
-              <span class="sr-only">Toggle navigation</span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="index.php"><span class="glyphicon glyphicon-wrench"></span>&nbsp;TTMED-PSU ระบบแจ้งซ่อมออนไลน์</a>
-          </div>
-
-
-
-        </div>
-      </nav> -->
-
-
-
-      <!-- <ul class="nav nav-pills">
-          <li role="presentation" class="active"><a href="index.php">
-            <span class="glyphicon glyphicon-home">&nbsp;หน้าแรก</span></a></li>
-            <li role="presentation"><a href="https://goo.gl/0euz2r">Facebook</a></li>
-            <li role="presentation"><a href="apps/about.php">เกี่ยวกับเรา</a></li>
-      </ul> -->
-ิ
 </ul>
       <!-- Main jumbotron for a primary marketing message or call to action -->
 <br>
